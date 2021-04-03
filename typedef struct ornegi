@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+ 	int vizenot[2];
+ 	int quiznot[2];
+ 	int final;
+ } ogrencinot;
+ typedef struct {
+ 	char telefon[50];
+ 	char eposta[50];
+ } iletisim;
+ typedef struct {
+ 	int no;
+ 	char ad[50];
+ 	char soyad[50];
+ 	int cinsiyet;
+ 	iletisim ogriletisim;
+ 	ogrencinot notlar;
+ } ogrenci;
+int main() {
+	ogrenci ogr;
+	ogr.no=1000;
+	strcpy(ogr.ogriletisim.telefon,"555");
+	strcpy(ogr.ogriletisim.eposta,"800uncutakipci@gmail.com");
+	ogr.notlar.quiznot[0] = 66;
+	ogr.notlar.vizenot[1] = 55;
+	ogr.notlar.final = 88;
+	
+	printf(" ogr no: %d\n quiz: %d\n vize: %d\n final: %d\n eposta: %s\n tel: %s\n",
+	ogr.no,
+	ogr.notlar.quiznot[0],
+	ogr.notlar.vizenot[1],
+	ogr.notlar.final,
+	ogr.ogriletisim.eposta,
+	ogr.ogriletisim.telefon
+	);
+	
+	return 0;
+	}
